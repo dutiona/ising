@@ -20,7 +20,9 @@ public class metropolis {
 	 * @param M - pas à partir duquel on change la température
 	 * @return double - minimum global de la fonction
 	 */
-	public static float metropolisRendu(float inf, float sup, float T, float nmc, float pas, int M){
+	public static float[] metropolisRendu(float inf, float sup, float T, float nmc, float pas, int M){
+		float[] Xtab= new float[(int) nmc];
+		
 		//valeur précédente
 		float Xp;
 		//valeur suivante
@@ -58,10 +60,13 @@ public class metropolis {
 				float P = (float) Math.exp(-deltaF/T);
 				if(Math.random()<P){
 					Xp=Xs;
+					Xtab[n]= Xp;
 				}
 			}else{
 				Xp=Xs;
+				Xtab[n]= Xp;
 			}
+			
 			m++;
 			if(m==M){
 				m=0;
@@ -70,6 +75,6 @@ public class metropolis {
 			}
 		}
 		
-		return Xp;
+		return Xtab;
 	}
 }
