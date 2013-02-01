@@ -10,7 +10,7 @@ public class test {
 	public static void main(String[] args) {
 		
 		
-		float [] Xtab= metropolis.metropolisRendu(-5, 5, 100, (float)Math.pow(2, 17), (float)0.1, 512);
+		float [] Xtab= metropolis.metropolisRendu(-5, 5, 100, (float)Math.pow(2, 17), (float)1, 512);
 
 		
 		Point2D.Double[] donnees= new Point2D.Double[Xtab.length];

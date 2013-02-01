@@ -71,7 +71,7 @@ public class metropolis {
 			if(m==M){
 				m=0;
 				nT++;
-				T=(float) Math.pow(T0*(1-M*nT/nmc),4);
+				T=T0* (float) Math.pow((1-M*nT/nmc),4);
 			}
 		}
 		
